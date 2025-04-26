@@ -4,9 +4,12 @@ from .auth import auth_bp
 from .ehr import ehr_bp
 from .sync import sync_bp, ping_peers, start_peer_monitor
 from .audit import audit_bp
+from flask_cors import CORS
 
 def create_app():
     app = Flask(__name__)
+
+    CORS(app)
 
     # Load config from environment
     app.config['JWT_SECRET'] = os.environ.get('JWT_SECRET', 'changeme')
