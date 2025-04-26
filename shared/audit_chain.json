@@ -1,119 +1,122 @@
 [
   {
-    "timestamp": "2025-04-25T07:39:50.291573Z",
-    "user_id": "U001",
-    "patient_id": "P001",
-    "action": "view",
+    "timestamp": "2025-04-26T07:47:26.838471",
+    "target_user_id": "P001",
+    "actor_user_id": "P001",
+    "actor_username": "alice",
+    "actor_role": "patient",
+    "action": "query",
     "encrypted_data": {
-      "encrypted_log": "Y2MzmhmLYTi8h/Apa/SwJh+W554OKYeU1PDfNGWo805QMRDo3WeE/hXyzxcAPzSiwRjnnlWHsaz7E7jyJyVkEqYCNpN75lhGTswG",
-      "nonce": "rbaV4iZn+kE/HmAl",
-      "encrypted_key": "lmJcIIU4dDnjCDRbineu3cUeN8tfsmLmma65+0+e+frDGb7tPTJE4mnraVtMf2FbicmQHbvdofE44kPS2cYYqBaJ7B3fFeAnFsBevL3Kh0QXBgaja6IYlhpKY1QummDjrMotTpAOrG7Cg1pwfeLfP5CcHntz4ZuHKeYWNIhfSzWfykZti6ZgO+Oln73OzoG55Evqzjytj5V/q12TXxL7Uh4Nc9iU0KNrtxqEweCsOORhgKeo9razUNyfDLc7DGnU1lVOIqHHrZPeG1NYgl8Tf8DBQs/I91uISiH+pmQpAHHloLs94UBqA6DboESTb7Lh0i91Z2o6Zs/0vSYZH29kRw=="
+      "encrypted_log": "pmr3xjbqwsl5pgeldjLlY9mmHqy8fMY7VPlmVELHWDVmMHjm9djHbZ+KIbmD2pyTU7KxTlE/vcZXjuZ1eRFCb+mfbCUD4PZskoSbe1pcImo0RKealXzepdenY/gknoCRaZyLQ/28VqbsnoER4y4nY3JUZbG56AX792UHifMZfqZN/YFDpRwrIQR3",
+      "nonce": "w0TAfafQf5DD7oOA",
+      "encrypted_key": "MrwrzVb/Yj+4sMpAD2gFa/ctgv58B6Pu5lkhWG14xxUpCUnfPZd85GeQd7x1Xis0kKb2jvVRNrgmoFNYxWoKsiPX7+yLdCfcQrv425BkH/zGd8guLh00NARu579VYQ2UEx4qXJqiwz66OGbnndRa3Z4UFQIBHjkNmkaqjzDVVT3/vKbfoUNls/pAo4izhglvYqqBgRaG8jJJcjvRlSjyxgusiSI53/7zWSrnhnGZ7r/ehqeJadk1r9nZw4t9mwB8qe6WEDvLGQc2WPVyFzVo9MwKp4H7Yeuoen605NvH81ru9YwWhtce4DXotz4K5AV06t+326U0ueuPyWxa+sdC/A=="
     },
     "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
-    "current_hash": "0edb8be17406128ce7180bcbb86cd108a417913f9bd2b1596f74f4b1332f300e"
+    "current_hash": "1d7ebc9bdcded1b1e80fa39498cca0067be6064dace04897bf3ffe020aeb74b3"
   },
   {
-    "timestamp": "2025-04-25T23:17:56.929573Z",
-    "user_id": "U011",
-    "patient_id": "P001,P002",
-    "action": "audit_query",
+    "timestamp": "2025-04-26T07:47:42.294710",
+    "target_user_id": "P001",
+    "actor_user_id": "A002",
+    "actor_username": "auditor2",
+    "actor_role": "auditor",
+    "action": "query",
     "encrypted_data": {
-      "encrypted_log": "WvciBEaV8sV27SsbWSAwiKCxTclUAiI3O8FjuqCEvfsDSaYUfqs9TDl8n6TVViZheYR2kAT1sys+m0/WKAMmMtQxK0ktHF3Sqnzwee1vLiCmd8w9Slj+",
-      "nonce": "ygUR0N1SMFD5oLOp",
-      "encrypted_key": "GW1ep8i6DyJU7kaG0lGPXNo4kYnXMMm/KRQEf/Vy70xkJtST9Ergc7aBTHwKZjQJ61X36jpv/QJYCQy5CaxKxFWKYF1qf1w3HdZLtFvq3CyFrAngr/+tRQoQAHe9Rv6E817wW/R83tlZwtymOjSJPq9FdISHPvXfXWuQmxKkqdCsVoQZb4cLQdoy3E0GKDPRXh2hPQE8QbvPt+CzPAT5dMw+ZcqPCwrtqszUATh7CE240i5z1tBe1BpjQaJJ36uL+sXDLKIbYYNvBwXtyhuIED+9MwAp4fudQPo75lUtlvQpTHv7rwjBzOocc//rADFDk9fevTLEuNQYT4SqIDDRqA=="
+      "encrypted_log": "+FUD/EzKTONHoNYHPU42eBZZkop2j+v0GuGfkTz5zLBBmq3psXT+NxMkoVbiJbVraLs3Mw+XGL/5bnwEjUbXiL3kSkEg8dmBodIIMRBKoXe7Svq0p5r0xR7Iwd8dCW1gmEgVCkgWCESsNhn88NBdlxspxnhcfi4E8YS4JgpQr5xf9S9IOrZQTGayfQO4",
+      "nonce": "QxqdtCR0a/V7Wryk",
+      "encrypted_key": "XcMaUiZuGOweHcclvTnfv3jIY0fjnc+GV92aoJB2+H9SPn0b9ZuNwc+yLJHWxL+hN3jXLs3Mfe9GpL3WGqr6xy1LX8qlDmrN+5C+LJRKgYrV/afOoFTqA3dxh+a5DJ1YjRlzvccGyWXJzuVrcAZnIUANy4+ElMysGnBHpFGiHHx6wIORAEMdd4cVEDHL+8jXKXBJ6WWoE+DXB91cNbu3iGe9O1vu4lFu3Dl/ymz7h7w20wajDJgqLKGyARRxseFGZViutEnI9p5ePaBWrNevmiSmx6c/ZV4nOmFvlHCVtQ5omaIZPrDa8+wr5YL4K9rO8lwEkE6jzKfZyTNfFvEdLQ=="
     },
-    "prev_hash": "0edb8be17406128ce7180bcbb86cd108a417913f9bd2b1596f74f4b1332f300e",
-    "current_hash": "d945cf7589404de707619e7e7b1ea196edde37ad33781121e91eb2ed753e7a1d"
+    "prev_hash": "1d7ebc9bdcded1b1e80fa39498cca0067be6064dace04897bf3ffe020aeb74b3",
+    "current_hash": "e83687973222dfde63152b184fc13aa1e06a218b01bea333113dfddf36095b95"
   },
   {
-    "timestamp": "2025-04-25T23:19:00.840638Z",
-    "user_id": "U011",
-    "patient_id": "",
-    "action": "audit_query",
+    "timestamp": "2025-04-26T07:47:52.703346",
+    "target_user_id": "",
+    "actor_user_id": "A002",
+    "actor_username": "auditor2",
+    "actor_role": "auditor",
+    "action": "query",
     "encrypted_data": {
-      "encrypted_log": "F/MmJe+heNOrKpX3Lst5qA+lp2PLKRnIlWcaSayKVkHt5OllrVrb2EMV6mXSWnz42PRbVwbjbbDx+sBxcUu4XM1ZR52gjTMI/X6v8eST",
-      "nonce": "QYHvFWO4pbjPf7xY",
-      "encrypted_key": "dVhiCumTERbqSCJ+RofgUByJ0/udyxTO2phSg0ZT/6kXJ2mL94kKNsQQC+mSFKMhEG6qlalS/L4OEodwu29cxBaVFNM+/b5zM/HmKaD2po+ZSu8qxC1uanxhJ+PQAuKNch34RVSmZ4WxZeI6em+tipzjl4cYfZj4AGSRzagKNc+HOVvhXL37I90NiGgU+HEPbujc6zVvUxEqWPakRgZXpafEo4kYj26JyCTAN6d+3ocLHJDMXBoZC+dT68gZ3sRWAZS+2FTjQO9bYfbhTt3NHOyVf48SNLDPj/GzrsuxowaOJdF8U3ohQ79lzl2OKV8pMUvxQGLC4Q0fCPE7aBYRtw=="
+      "encrypted_log": "hKJqTM6AtvKfcq14ViPAgz5Ve3GrFHS9iSK7VXk2MxnKKPB7iPZK2uhJQLO0SeMUrnSfPrxh3nU5lZbt8HOjiISfqCOkHhKcCrqWP+OLN5/cAp3lbXOOoK0ORqyXE9KuWql4OTLbKhk+/256SXZqEIYlKe4MOMpYZ8DZNGiI8XCJftE3OdOsj+A=",
+      "nonce": "2viRnTsrS0DyHIRP",
+      "encrypted_key": "U0EwlvWfIB5UaR1ZeIolwySWjtDJzB9wzuUcKKC4NQkZdqtA3CDBCZHyb35mjMVJdl+szP/TY8WkIRfcNBovbdYA6NuLtkKGvwH3RX1idbWOq/yaRgqSqsOOtIENVGmVtlDZcMieJ3THhJRnTTub2qe9Cxv+Q4PSJALgp84tgZ2vE3IqpyMlGjSnI3ltoyp2WZF9IHzUy0DVTBKTf+MfoI/cmg/ZHrPgcRE+bzsYI/wIRw7dHcyMe8qrWTToQgKRsVGtUTJEulvUW3ABIW2M5mcnw3kFYiczOLJkHQsTtJjMSLUdzdpyywxcC1VF7XAITDbLKfQvDs6knRmDJbIEnA=="
     },
-    "prev_hash": "d945cf7589404de707619e7e7b1ea196edde37ad33781121e91eb2ed753e7a1d",
-    "current_hash": "2975150986de6876ed111abaa4d1fbb3f1dc90ce37398394ab383ad699a63762"
+    "prev_hash": "e83687973222dfde63152b184fc13aa1e06a218b01bea333113dfddf36095b95",
+    "current_hash": "6d0ee231528b8926e672d54dac5514390a4c4e611660c06cab2367ef0bf661ee"
   },
   {
-    "timestamp": "2025-04-26T02:05:28.000526Z",
-    "user_id": "U001",
-    "patient_id": "P001",
-    "action": "view",
+    "timestamp": "2025-04-26T07:47:58.828884",
+    "target_user_id": "*",
+    "actor_user_id": "A002",
+    "actor_username": "auditor2",
+    "actor_role": "auditor",
+    "action": "query",
     "encrypted_data": {
-      "encrypted_log": "ljLZ2sOoivx1lqyTSk3jeQNFh7og8cbHeEwRAnrZIIlXwTdJTdYRwWsSMSeTsXsA1e3nnwH++filROWxF6+FHJs6Nm4pw69pOrAI",
-      "nonce": "TNWklqCTyU4k+zEq",
-      "encrypted_key": "SPJQncnD8wTwnBONxUKpjMoEUgJrmACLUcPr2//0VV4ZvKZ2vEC0vISQzUR/51qRCjdHONHefhVLX/Ucdd6D2ikjiVX3BdeRfz2tdwAj3+ZtguYmxaY1j6qqlJS8aEZJadsMPY40y6ZV3h7jv1URzSuo40p/sZBtQkTGZfqLC8VUXOk9SPHaXzuCyYIypJmzoiJgD6+U5+xwMhIa8ra12nGHx3a2732FMcQ5s7ymeTkVWJo54C4NR5MI8KWA3tmOnCEqgNTr640JG4dlN2fxTWLw/+9rpj2bKth/30PKUKqvES2mAvYqZxmwEKCBIfgOtxv956yGDvTgO2FHJUumgw=="
+      "encrypted_log": "Zwg4S0vkdV8nQ3X3qIJhIBWAa2GJQL49rykxmlLUq9G9H2Ad/QDypeHAmzGRp+GoOrCRcIqolvRyoQcHGNpJhFIwZCXOs/aj80chb8bdrlcs0GXHuIQrwXI3ScZvagVP98Al/9ppqM/bipi4fLCGrt89s7jDi3J/ytY07Zq1/8xv/n/QZZjuLxHo",
+      "nonce": "3KeuEC/iApkfcKV6",
+      "encrypted_key": "DtcDMRsPZCjs2uFiC+tFVxLjEvcxi6rWumDNCzG5GYyTLRK08lWwT9fhgVFHeNbHhpu9jZoGS7pI8VCqq2OaDp2u+NUEF8wghDRJbwdYewVVHfyFiploeJB3f5RCO6XVUvRkTvp+jzri0TND+Hv+MGSFWbEA7+enDW+lD0UnSdFPOorp7l2MTssO0DOH8rCZ84Wim1ZvoZF43WmNFzSs/4YkQuBwAFj6itCCyoaut37BxNfr4S+rMb/ByCYz+Z1MXvS6+0si0L2W0dsFP6LQYomGgQfPn07BpmHQaaevpeDsnO8AIK5/LI4GPfVGKMGiuwXj56WF1erJiXcpSWZ6JQ=="
     },
-    "prev_hash": "2975150986de6876ed111abaa4d1fbb3f1dc90ce37398394ab383ad699a63762",
-    "current_hash": "120b900b31b22a027ca3fee9e1781a038221fd739115b06b390d25aea98c99c5"
+    "prev_hash": "6d0ee231528b8926e672d54dac5514390a4c4e611660c06cab2367ef0bf661ee",
+    "current_hash": "9f63b01e9c62559d31f8f7b26892899d01831d5279b762fa8b9df387b0abae8f"
   },
   {
-    "timestamp": "2025-04-26T02:07:31.527109Z",
-    "user_id": "U001",
-    "patient_id": "P001",
-    "action": "view",
+    "timestamp": "2025-04-26T07:52:36.258429",
+    "target_user_id": "*",
+    "actor_user_id": "A002",
+    "actor_username": "auditor2",
+    "actor_role": "auditor",
+    "action": "query",
     "encrypted_data": {
-      "encrypted_log": "/uO0Bo719l79k6b3Jelo9fWmkSKluqDNRtMmQQ2iTNLNrgKKQbBmqfe5uqffBScJ7xf5gkQIuh83ldxAZuY2THzla5Kj5rO9S6js",
-      "nonce": "GtfQ4swdGzVHyLdB",
-      "encrypted_key": "lz/ik3dsji6dxXSUiYDGuMsF+dcr5dbJomsaMNTvhttCkvPiBTsabJBcSlgAUBq6s4wsAG5CnVegUeSCCX8+w+/eUwIEhLODkhps/fXJRe/4O/ZxJ620nS45myBYtom9myreDv86W4Jqk/z42zR/PCy5POnPjc+J5SpIRrnjPZkBfyTFYq9DS1oWeJQ6BG19sKJPkWnBzFT/xX1ITgxINeWlycf2qZsd2dkBKI8K/dCx8yE7wFfHyU5EjAZ6pWzxJokMiViqobl6t1ZuK6Hi1pHPqiyrg+nV7Q8kxqDDPRPEEzfI9THK9vsiYd5JCKgkeIH0tbvVQYpZ8zh5MM/R8g=="
+      "encrypted_log": "Tzwzk4AXvrvZky1ibf6Vy5eVYDG66KVzlxCiYenhOBG+P5IY/7AZUvb3msi+wHMo5V64UFcUP2tImbghmm5YsDTbCzvmMLCbu4oYjH4bYNk9/k+4M8vJRD+uPntydXYu85Nceclbfi7uyXB1RRB0UL20CNlCc3PrFs55oNQjVsJ3DXImE+DjiGK1",
+      "nonce": "G70yep6S7GGT+S0P",
+      "encrypted_key": "o8cL6eMZLXivKtm5jkKtUwUSXcYDbSULSZ3EzCIfcwv139kuOoEV7fpIACG7xo8JZyeSIF2pGfQLgO+aX46OvtlV7tqaOcBLWtTZLj72DU/yo7QNk7TDYj45yHameD/ecBTrv5L7rTO1tINhIYbkNQmuEiyEbzn0wjxdrdKb767zF1T0Tva1w/Vk/JD3QZVdczF8TXZ8QJqsjk+dfjgaIoHIeVVobAi9e0GKqVgMOWQiH3ZxqUbfgk4pH2kJxOciYLhXIPSSm37XHocJ9sSPv9+uwm3NLxvyJQmuUc17L9P/wdSscBKkAH7EesBn6A+2se7ZC01YLDrT4M7T0zitDw=="
     },
-    "prev_hash": "120b900b31b22a027ca3fee9e1781a038221fd739115b06b390d25aea98c99c5",
-    "current_hash": "8f1ddee04a8eb8fcb15154d69f8e3a69513f2c3a667da07fa94dc72e87ab8566"
+    "prev_hash": "9f63b01e9c62559d31f8f7b26892899d01831d5279b762fa8b9df387b0abae8f",
+    "current_hash": "e9e63065761dbd5f64802cb016c0390297832989ef371138b7ebbe461dfaba09"
   },
   {
-    "timestamp": "2025-04-26T02:08:57.595614Z",
-    "user_id": "U001",
-    "patient_id": "P001",
-    "action": "view",
+    "timestamp": "2025-04-26T07:52:48.088570",
+    "target_user_id": "P001",
+    "actor_user_id": "A002",
+    "actor_username": "auditor2",
+    "actor_role": "auditor",
+    "action": "query",
     "encrypted_data": {
-      "encrypted_log": "GMXt0oD78JFgNtQCXKgJO2BAerCGiLu+KOifffRpOmrH9SRt8rp13CMictlkLRWPU4tk6mH93g+pXEsDTqPTFzSi+Jd2TdtUMWqo",
-      "nonce": "UAqkYTJcDXH3PIkk",
-      "encrypted_key": "YTO2TjfkabFyXXhQwynmhLP4JRhZ6NBioXykzrGmdk/1Ua6l9IQNUd8sy6bAlEt8XLVuozM2Zstuu8kuxhJQJHeWd8OnZLe//b1UF0WYkOhlz26wkrJw3Cme7EJ5+0/WLLKhhkiWpOJjjJOde3r2t8wg8ZvJxKH7I+yVmdvpVTE49p+16lnyCn2Jb3dEJZpEMQuwTkApLZw9Nk5pKv/hDpC8PadT4jFA5y2VujN1LwD1lB41BSppA7Is0FjAjJSg28qpPTpD0yaKEBvLYVkHLeT2Omvyg6c9+E33V930JDYrAB5mPvxI1A4Rm6R4TGKG8r/LrGJ+uF1xwKo5Wh3H3w=="
+      "encrypted_log": "qy2mT3OV6Z9mwU7o4Xp9EDCvATN9mcXh6viZcKKoXV483GWtDuFkBIMq9DCfw58YGFVV7OZuVcPepFEHsZczMqSzRx0mAHbYo5/w1ayDzLq2JGiC+jfh3ZgRf8q+EVEbZSGx0m+Nhv5uhTMCoIhyFa0x0FL+7pnilWrPrpW3JwRCHAXrxcEeU2RazODL",
+      "nonce": "KHUW3FUTHLbLMhjK",
+      "encrypted_key": "ecsYlzHHnH4WAn726mIfz7yPOGfN+RZhFXoyvhgwSS6MYyHEA6uK5BcehT0UzncvJJ0YtAjvizBiUZMhqjpKcqdNy20S/lRvZ4TcEN/jZebWyA7I5+fnyzE83yuI9vimCZQtpiy3DEuxTH4KUZ17c8pJ2LbgBOMQfqi+uOwZd/Lmnsz0aTLiV7thVVQV+8G3RTZoTXqIJhK1AnNogwRiH6vTe9xkWVcXUjs6AinTyS8d8Y3YPxzD9AGFPyyRE2rUr4VS2FcrOimYCASi+tWrXuHAt5KPWw2sEdbaxmrCEA5uqfautv2rQY/KWqYRkViEydmf4zDY7L8wR+fFcq9zog=="
     },
-    "prev_hash": "8f1ddee04a8eb8fcb15154d69f8e3a69513f2c3a667da07fa94dc72e87ab8566",
-    "current_hash": "8b9edaa31bf789f43c6d99bf1a68c238ae781270b41878cf44a3ad69df730e9b"
+    "prev_hash": "e9e63065761dbd5f64802cb016c0390297832989ef371138b7ebbe461dfaba09",
+    "current_hash": "409ac2fe535c72e9b8d8bc2822e38f31595b4e31b61009cff735380168643d06"
   },
   {
-    "timestamp": "2025-04-26T02:19:47.654933Z",
-    "user_id": "U011",
-    "patient_id": "P001",
-    "action": "audit_query",
+    "timestamp": "2025-04-26T07:53:01.554974",
+    "target_user_id": "*",
+    "actor_user_id": "A002",
+    "actor_username": "auditor2",
+    "actor_role": "auditor",
+    "action": "query",
     "encrypted_data": {
-      "encrypted_log": "V94HGfRG4R6fni3L1SB4pZ5CbRuhx4t7exz+mok97M8y9j33vx5/FwRp+jWJ+3RSfVzVmlsRzbNyUkexV++qCdTQZSNb4ZGCG6/NUFlwA9xIXQ==",
-      "nonce": "nnhEm448Pz+OazpT",
-      "encrypted_key": "UskGYKN+QguVnrx0hbGEkoQd0cHoSpZL4Lo753Oi6vm+emuMA8P3vsBbGdtFBPvu1rjW+FxELa+S+ryOLD8/41/TBlwRooYM690pXMDZKZQwYuvaGLxQ55H5iurUpAhgqYK/8sJuurVUdxZ1Al3vIu4S5bVF+wSmHe06ownVgx/3zFyaZ+gqiqTVN+aAh3eIjbkm0VjuadRkUuguGbulUhofQpi7WrYxyYrGanPcbjrasLYkE3YCIKdDQg2I5genF0/uc47VixB1yQs+IlrWidfS7faaLFLKhjtxCKycDVH7ungL/MUJB4LMW6jXuuR1534DSUGm+ldHp8yNSsrpdw=="
+      "encrypted_log": "+hTS1c2LMVajEo6QJ2BTre6d8oTHN/8mCo6P0zvyfCaCPyDJ5FKtSvi43fGjt35Zrz8wTEVTsieODkSkdnyx4z73eJlusiRJSQI2h3DIdy7/b/VlJEnd3s5xPDWigYjLtWHvAaC7npsqr5oyPGNdIQgNhi4HJuuINoZAEr/lF5KsTqCAx4XCZ2Ra",
+      "nonce": "FZ1UlYgp9o4Zd6tg",
+      "encrypted_key": "Ex7D4qs5QGIyrGyPxmzAlMbdctbXUedgIqxE9VjxRpf1mqFa7UecxGs1fCjLSlD9lUuG/iOTKVOSLgEokOb86Ntb9qKq35ZFGpCa636HY0zekAMTMXwpdJuYmNA67IMJDJWFVluTaSzON9ER14N8Fy3mx51y0DSOvMd1z48aRBY074epSUzna9/PRAziB/Cx3j4hJQDHpWhNH8qb+y6/kBmUmexm5vJYXXEDn7d5tbDaDEKwt8lskkmj5MqWq/Pf4lS8DEewFPdjul6IXyGPA3BMy87LJjwvjqU0bT/uUEKWUY2yuJf/bvtP7nL4OYbEp9uzaUmvYnL4S8Mj9a3AiA=="
     },
-    "prev_hash": "8b9edaa31bf789f43c6d99bf1a68c238ae781270b41878cf44a3ad69df730e9b",
-    "current_hash": "d1d76ab8fa376290bd471ee8c050bdb0fd3402c7613d14a2ab5aa30ecb738c81"
+    "prev_hash": "409ac2fe535c72e9b8d8bc2822e38f31595b4e31b61009cff735380168643d06",
+    "current_hash": "f3040344ba41da42ccc186021f31d3182f6f6ae2d48163f4790f45957e03dcdd"
   },
   {
-    "timestamp": "2025-04-26T02:20:25.211929Z",
-    "user_id": "U011",
-    "patient_id": "",
-    "action": "audit_query",
+    "timestamp": "2025-04-26T07:53:09.829402",
+    "target_user_id": "",
+    "actor_user_id": "A002",
+    "actor_username": "auditor2",
+    "actor_role": "auditor",
+    "action": "query",
     "encrypted_data": {
-      "encrypted_log": "tfGb5tg0jFeJdTI9dM+9JSFdBHGrcfIQ3gAfMfKvASGP2v5SGO/vx8SkvbUOH/sY1E/dpCsCF2J27NtA/TJQpZqqxjxUfTOVkYUZBjw6",
-      "nonce": "NNRhFfaxz4QfjFh8",
-      "encrypted_key": "Kn1AytsDADBoukB4oab4bNzKx+gHlxGQ3IQqnDObYpUdZfnVdEu+L7LOVsQ5wNwwmcMx8bPmr5QmVPL/UdoAgRxcEqVFdQ2LvMmJJpMPbaqZg9k938VGj/37SsTUQlZuJKlxXUp8nBNXGt1zOFjhtagsOLNTB0KcZBTRzmOrsyB1z7656CYL9sOYfCldG8bbTzCbB28jXNqfIUUp6zOa9K4y58KcPSfjzh2ZnzapB7atefyf5gWE//WSIS5kYaJG8bXxPW9ewECNJNVQzsFyFxGd6Lj3E01lhSh34X73vIJ7NyyWjZrPKW0QrzL6VE3/M1f+viGuPRF8iIl+3Q/xiQ=="
+      "encrypted_log": "1JALLv+qHtJkVWYbtrtQQFSM7anR/6LD/OfiZFWuCjNMVPqZzXlH67B3btexHsTBZVcNASdTT0flaKqhgjSkkv41EnK7ZAv2pM0dcYTUsSdKwAbQ1yIZzzDvCQEDDIytumShIfA+EXXm+3TW/Vt4WuZiOu0L7YArzfeLiOsmfWvcHa/RbB3HBac=",
+      "nonce": "Qr1ZMm/L6nfc/7of",
+      "encrypted_key": "UGxeXnWpUi8+g9Hi6uG1qQRk8WbWLDtSc5MRcQFiL6O8LGeB7xAT1ZhDXtTrpMn0qeql2F4bQTfbjlZEuYmPtrdiDjAK2STP2756fSeFlc78/yLXO64WQDzUVZTAQop3dmaHwdvV+HnF9Sr93/5MtEnQgcU9PM1UdbUjmZQujJhRVt1UbtFfef89mPbhtTU7QPdgeb/TJiWp629Za5ESt26UUY0Xgv2v/weZAv5Ntkv5gWDDuWGLK/s5JVY4CMV14yZ0XSv3xDggpk9ULT5QZx5rNa3Lxt74qmKphzB1vKs0RRN7REN52+PZ2O8kqOqU69BCyWMy8swFf3LyWX7eRw=="
     },
-    "prev_hash": "d1d76ab8fa376290bd471ee8c050bdb0fd3402c7613d14a2ab5aa30ecb738c81",
-    "current_hash": "da1d453a4c0932f2d385afc444e5c4b1c49c70567994d4e35db6cca23a8c06dd"
-  },
-  {
-    "timestamp": "2025-04-26T02:26:11.573427Z",
-    "user_id": "U001",
-    "patient_id": "P001",
-    "action": "view",
-    "encrypted_data": {
-      "encrypted_log": "EFlIRsYtHhZzCIIOvzBuRI9X6zwoJJee7tXJ+FTThHzcYoZiOtbtcvloDbcw1sXFIXcII3LjYG3j1DCo8A0dDuXpzkWVYcNlc1eA",
-      "nonce": "MxJg6veMwL4hteGN",
-      "encrypted_key": "hW3ekqBHgf1/KsTgPfmOlpoqtjlzOVrTdlEXYDIhstwX3tvfa9mTzQx2Bj0UTMls9lagqxhjFGjHiaaRgIRPIkNjHZ8RlS2r/n+wmVYAKHxxpQxYm3P23kUO03npQoShMwIFiGkPIgyTel61d6AyypC56eUYqm2wSXRa02bqrX6DTJzB899fATFg/3jHz1YZ2HGSmIvcioi9nSsRMVQvG+swFMnzWVikYTDckbt00jcUA68eUdtFYwzeIzuRTuV/pEX/1EUIktFkvSw7WV0g5vGj95IsmGO7Z3fnqTzWS8yLdCzSv8+VC+ERM2mgjyfF7RrEzG4wQlaWmw8R2rlUHA=="
-    },
-    "prev_hash": "da1d453a4c0932f2d385afc444e5c4b1c49c70567994d4e35db6cca23a8c06dd",
-    "current_hash": "cf736ecff67038d927f2a2026c1f8e8faba7932c770cd87f4e783d375b518567"
+    "prev_hash": "f3040344ba41da42ccc186021f31d3182f6f6ae2d48163f4790f45957e03dcdd",
+    "current_hash": "cb7c2a2a008d22b385601fe79eb4cc9bebbae54bf8530e7add49b379ed5b86e2"
   }
 ]

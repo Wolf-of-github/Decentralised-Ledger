@@ -41,15 +41,17 @@ def get_my_ehr():
     if payload['role'] != 'patient':
         return jsonify({'error': 'Only patients can access their EHR'}), 403
 
-    patient_id = payload['patient_id']
+    patient_id = payload['user_id']
     ehr_data = load_ehr_data()
     patient_records = [entry for entry in ehr_data if entry['patient_id'] == patient_id]
 
     # 🔐 Log the access to the audit chain
     append_to_chain({
-        "user_id": payload["user_id"],
-        "patient_id": patient_id,
-        "action": "view"
+        "actor_user_id": payload["user_id"],
+        "actor_username": payload["username"],
+        "actor_role": payload["role"],
+        "target_user_id": patient_id,
+        "action": "query"
     })
 
     return jsonify({

@@ -46,17 +46,22 @@ def get_audit_chain():
         except Exception:
             continue  # skip any corrupted entries safely
 
-        patient_match = ('*' in patients) or (decrypted['patient_id'] in patients)
-        auditor_match = ('*' in auditors) or (decrypted['user_id'] in auditors)
+        patient_match = ('*' in patients) or (decrypted.get('target_user_id') in patients)
+        auditor_match = ('*' in auditors) or (decrypted.get('actor_user_id') in auditors)
 
-        if patient_match or auditor_match:
+        if ('*' in patients and '*' in auditors) or \
+           ('*' in patients and auditor_match) or \
+           ('*' in auditors and patient_match) or \
+           (patient_match and auditor_match):
             matching_records.append(decrypted)
 
-    # 🔥 Log that auditor accessed records
+    
     access_log = {
-        "user_id": payload["user_id"],
-        "patient_id": ",".join(patients),
-        "action": "audit_query"
+        "actor_user_id": payload["user_id"],
+        "actor_username": payload["username"],
+        "actor_role": payload["role"],
+        "target_user_id": ",".join(patients),
+        "action": "query"
     }
     append_to_chain(access_log)
 
@@ -82,7 +87,7 @@ def get_my_audit_access():
     if payload['role'] != 'patient':
         return jsonify({'error': 'Only patients can access their audit records'}), 403
 
-    patient_id = payload['patient_id']
+    patient_id = payload['user_id']
 
     chain = load_chain()
     matching_records = []
@@ -90,8 +95,8 @@ def get_my_audit_access():
     for entry in chain:
         try:
             decrypted = decrypt_log_record(entry['encrypted_data'])
-            patient_ids = decrypted['patient_id'].split(",")
-            if patient_id in patient_ids:
+            target_user_ids = decrypted.get('target_user_id', '').split(",")
+            if patient_id in target_user_ids:
                 matching_records.append(decrypted)
         except Exception:
             continue  # skip corrupted or tampered entries

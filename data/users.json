@@ -1,15 +1,15 @@
 [
-    { "user_id": "U001", "username": "alice", "role": "patient", "patient_id": "P001" },
-    { "user_id": "U002", "username": "diana", "role": "patient", "patient_id": "P002" },
-    { "user_id": "U003", "username": "bob_j", "role": "patient", "patient_id": "P003" },
-    { "user_id": "U004", "username": "george", "role": "patient", "patient_id": "P004" },
-    { "user_id": "U005", "username": "bob_w", "role": "patient", "patient_id": "P005" },
-    { "user_id": "U006", "username": "fiona", "role": "patient", "patient_id": "P006" },
-    { "user_id": "U007", "username": "charlie", "role": "patient", "patient_id": "P007" },
-    { "user_id": "U008", "username": "ethan", "role": "patient", "patient_id": "P008" },
-    { "user_id": "U009", "username": "hannah", "role": "patient", "patient_id": "P009" },
-    { "user_id": "U010", "username": "ian", "role": "patient", "patient_id": "P010" },
-    { "user_id": "U011", "username": "auditor1", "role": "auditor" },
-    { "user_id": "U012", "username": "auditor2", "role": "auditor" },
-    { "user_id": "U013", "username": "auditor3", "role": "auditor" }
-  ]
+  { "user_id": "P001", "username": "alice", "role": "patient", "password": "alice123" },
+  { "user_id": "P002", "username": "diana", "role": "patient", "password": "diana123" },
+  { "user_id": "P003", "username": "bob_j", "role": "patient", "password": "bobj123" },
+  { "user_id": "P004", "username": "george", "role": "patient", "password": "george123" },
+  { "user_id": "P005", "username": "bob_w", "role": "patient", "password": "bobw123" },
+  { "user_id": "P006", "username": "fiona", "role": "patient", "password": "fiona123" },
+  { "user_id": "P007", "username": "charlie", "role": "patient", "password": "charlie123" },
+  { "user_id": "P008", "username": "ethan", "role": "patient", "password": "ethan123" },
+  { "user_id": "P009", "username": "hannah", "role": "patient", "password": "hannah123" },
+  { "user_id": "P010", "username": "ian", "role": "patient", "password": "ian123" },
+  { "user_id": "A001", "username": "auditor1", "role": "auditor", "password": "audit123" },
+  { "user_id": "A002", "username": "auditor2", "role": "auditor", "password": "audit123" },
+  { "user_id": "A003", "username": "auditor3", "role": "auditor", "password": "audit123" }
+]
