@@ -91,13 +91,15 @@ const PatientDashboard = ({ selectedNode, token }) => {
                 {auditLogs.length > 0 ? (
                   auditLogs.map((log, idx) => (
                     <div key={idx} className="border rounded p-2 mb-2">
-                      <strong>Action:</strong> {log.action} <br />
-                      <strong>User:</strong> {log.user_id} <br />
-                      <strong>Patient ID:</strong> {log.patient_id}
+                      <p><strong>Action:</strong> {log.action}</p>
+                      <p><strong>Actor Role:</strong> {log.actor_role}</p>
+                      <p><strong>Actor User ID:</strong> {log.actor_user_id}</p>
+                      <p><strong>Actor Username:</strong> {log.actor_username}</p>
+                      <p><strong>Target User ID:</strong> {log.target_user_id}</p>
                     </div>
                   ))
                 ) : auditLogs.length === 0 && !loadingAudit ? (
-                  <p className="text-muted"></p> 
+                  <p className="text-muted">No access logs found.</p> 
                 ) : null}
               </div>
             </div>

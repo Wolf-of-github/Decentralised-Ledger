@@ -17,10 +17,10 @@ def verify_jwt(token):
         return None
 
 # ───────────────────────────────
-# Route: POST /audit/chain
+# Route: POST /audit/patient-records
 # ───────────────────────────────
-@audit_bp.route('/audit/chain', methods=['POST'])
-def get_audit_chain():
+@audit_bp.route('/audit/patient-records', methods=['POST'])
+def get_patient_records():
     auth_header = request.headers.get('Authorization')
     if not auth_header or not auth_header.startswith("Bearer "):
         return jsonify({'error': 'Missing or invalid Authorization header'}), 401
@@ -31,11 +31,10 @@ def get_audit_chain():
         return jsonify({'error': 'Invalid or expired token'}), 401
 
     if payload['role'] != 'auditor':
-        return jsonify({'error': 'Only auditors can access audit logs'}), 403
+        return jsonify({'error': 'Only auditors can access patient audit logs'}), 403
 
     request_data = request.get_json()
-    patients = request_data.get('patients', ['*'])
-    auditors = request_data.get('auditors', ['*'])
+    patient_id = request_data.get('patient_id', '*')
 
     chain = load_chain()
     matching_records = []
@@ -46,22 +45,74 @@ def get_audit_chain():
         except Exception:
             continue  # skip any corrupted entries safely
 
-        patient_match = ('*' in patients) or (decrypted.get('target_user_id') in patients)
-        auditor_match = ('*' in auditors) or (decrypted.get('actor_user_id') in auditors)
+        # Only consider records where action was performed by a patient
+        if decrypted.get('actor_role') != 'patient':
+            continue
 
-        if ('*' in patients and '*' in auditors) or \
-           ('*' in patients and auditor_match) or \
-           ('*' in auditors and patient_match) or \
-           (patient_match and auditor_match):
+        if patient_id == '*':
             matching_records.append(decrypted)
+        else:
+            if decrypted.get('actor_user_id') == patient_id:
+                matching_records.append(decrypted)
 
-    
     access_log = {
         "actor_user_id": payload["user_id"],
         "actor_username": payload["username"],
         "actor_role": payload["role"],
-        "target_user_id": ",".join(patients),
-        "action": "query"
+        "target_user_id": patient_id,
+        "action": "query_patient_records"
+    }
+    append_to_chain(access_log)
+
+    return jsonify({
+        "records": matching_records,
+        "count": len(matching_records)
+    })
+
+# ───────────────────────────────
+# Route: POST /audit/auditor-records
+# ───────────────────────────────
+@audit_bp.route('/audit/auditor-records', methods=['POST'])
+def get_auditor_records():
+    auth_header = request.headers.get('Authorization')
+    if not auth_header or not auth_header.startswith("Bearer "):
+        return jsonify({'error': 'Missing or invalid Authorization header'}), 401
+
+    token = auth_header.split(" ")[1]
+    payload = verify_jwt(token)
+    if not payload:
+        return jsonify({'error': 'Invalid or expired token'}), 401
+
+    if payload['role'] != 'auditor':
+        return jsonify({'error': 'Only auditors can access auditor audit logs'}), 403
+
+    request_data = request.get_json()
+    auditor_id = request_data.get('auditor_id', '*')
+
+    chain = load_chain()
+    matching_records = []
+
+    for entry in chain:
+        try:
+            decrypted = decrypt_log_record(entry['encrypted_data'])
+        except Exception:
+            continue  # skip any corrupted entries safely
+
+        if decrypted.get('actor_role') != 'auditor':
+            continue
+
+        if auditor_id == '*':
+            matching_records.append(decrypted)
+        else:
+            if decrypted.get('actor_user_id') == auditor_id:
+                matching_records.append(decrypted)
+
+    access_log = {
+        "actor_user_id": payload["user_id"],
+        "actor_username": payload["username"],
+        "actor_role": payload["role"],
+        "target_user_id": auditor_id,
+        "action": "query_auditor_records"
     }
     append_to_chain(access_log)
 
