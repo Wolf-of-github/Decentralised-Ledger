@@ -33,6 +33,7 @@ const PatientDashboard = ({ selectedNode, token }) => {
         }
       });
       const data = await response.json();
+      console.log(data)
       setAuditLogs(data.records || []);
     } catch (error) {
       console.error('Error fetching audit logs:', error);
@@ -96,6 +97,7 @@ const PatientDashboard = ({ selectedNode, token }) => {
                       <p><strong>Actor User ID:</strong> {log.actor_user_id}</p>
                       <p><strong>Actor Username:</strong> {log.actor_username}</p>
                       <p><strong>Target User ID:</strong> {log.target_user_id}</p>
+                      <p><strong>Target User ID:</strong> {log.timestamp}</p>
                     </div>
                   ))
                 ) : auditLogs.length === 0 && !loadingAudit ? (

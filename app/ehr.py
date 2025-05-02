@@ -6,9 +6,6 @@ from app.chain import append_to_chain
 
 ehr_bp = Blueprint('ehr', __name__)
 
-# ───────────────────────────────
-# Utility: Verify JWT and return payload
-# ───────────────────────────────
 def verify_jwt(token):
     try:
         return jwt.decode(token, current_app.config['JWT_SECRET'], algorithms=['HS256'])
@@ -17,16 +14,10 @@ def verify_jwt(token):
     except jwt.InvalidTokenError:
         return None
 
-# ───────────────────────────────
-# Utility: Load full EHR data
-# ───────────────────────────────
 def load_ehr_data():
     with open('data/EHR_data.json', 'r') as f:
         return json.load(f)
 
-# ───────────────────────────────
-# Route: GET /my-ehr (patients only)
-# ───────────────────────────────
 @ehr_bp.route('/my-ehr', methods=['GET'])
 def get_my_ehr():
     auth_header = request.headers.get('Authorization')
@@ -45,7 +36,6 @@ def get_my_ehr():
     ehr_data = load_ehr_data()
     patient_records = [entry for entry in ehr_data if entry['patient_id'] == patient_id]
 
-    # 🔐 Log the access to the audit chain
     append_to_chain({
         "actor_user_id": payload["user_id"],
         "actor_username": payload["username"],

@@ -2,12 +2,10 @@ from flask import Blueprint, request, jsonify, current_app
 import jwt
 from app.chain import load_chain, append_to_chain
 from app.encryption import decrypt_log_record
+from datetime import datetime
 
 audit_bp = Blueprint('audit', __name__)
 
-# ───────────────────────────────
-# Utility: Verify JWT token
-# ───────────────────────────────
 def verify_jwt(token):
     try:
         return jwt.decode(token, current_app.config['JWT_SECRET'], algorithms=['HS256'])
@@ -16,9 +14,6 @@ def verify_jwt(token):
     except jwt.InvalidTokenError:
         return None
 
-# ───────────────────────────────
-# Route: POST /audit/patient-records
-# ───────────────────────────────
 @audit_bp.route('/audit/patient-records', methods=['POST'])
 def get_patient_records():
     auth_header = request.headers.get('Authorization')
@@ -50,10 +45,30 @@ def get_patient_records():
             continue
 
         if patient_id == '*':
-            matching_records.append(decrypted)
+            raw_ts = entry.get("timestamp", "")
+            formatted_ts = ""
+            try:
+                formatted_ts = datetime.fromisoformat(raw_ts).strftime("%Y-%m-%d, %H:%M:%S")
+            except Exception:
+                formatted_ts = raw_ts  # fallback if parsing fails
+
+            matching_records.append({
+                **decrypted,
+                "timestamp": formatted_ts
+            })
         else:
             if decrypted.get('actor_user_id') == patient_id:
-                matching_records.append(decrypted)
+                raw_ts = entry.get("timestamp", "")
+                formatted_ts = ""
+                try:
+                    formatted_ts = datetime.fromisoformat(raw_ts).strftime("%Y-%m-%d, %H:%M:%S")
+                except Exception:
+                    formatted_ts = raw_ts  # fallback if parsing fails
+
+                matching_records.append({
+                    **decrypted,
+                    "timestamp": formatted_ts
+                })
 
     access_log = {
         "actor_user_id": payload["user_id"],
@@ -69,9 +84,6 @@ def get_patient_records():
         "count": len(matching_records)
     })
 
-# ───────────────────────────────
-# Route: POST /audit/auditor-records
-# ───────────────────────────────
 @audit_bp.route('/audit/auditor-records', methods=['POST'])
 def get_auditor_records():
     auth_header = request.headers.get('Authorization')
@@ -102,10 +114,30 @@ def get_auditor_records():
             continue
 
         if auditor_id == '*':
-            matching_records.append(decrypted)
+            raw_ts = entry.get("timestamp", "")
+            formatted_ts = ""
+            try:
+                formatted_ts = datetime.fromisoformat(raw_ts).strftime("%Y-%m-%d, %H:%M:%S")
+            except Exception:
+                formatted_ts = raw_ts  # fallback if parsing fails
+
+            matching_records.append({
+                **decrypted,
+                "timestamp": formatted_ts
+            })
         else:
             if decrypted.get('actor_user_id') == auditor_id:
-                matching_records.append(decrypted)
+                raw_ts = entry.get("timestamp", "")
+                formatted_ts = ""
+                try:
+                    formatted_ts = datetime.fromisoformat(raw_ts).strftime("%Y-%m-%d, %H:%M:%S")
+                except Exception:
+                    formatted_ts = raw_ts  # fallback if parsing fails
+
+                matching_records.append({
+                    **decrypted,
+                    "timestamp": formatted_ts
+                })
 
     access_log = {
         "actor_user_id": payload["user_id"],
@@ -121,11 +153,10 @@ def get_auditor_records():
         "count": len(matching_records)
     })
 
-# ───────────────────────────────
-# Route: GET /audit/my-access
-# ───────────────────────────────
 @audit_bp.route('/audit/my-access', methods=['GET'])
 def get_my_audit_access():
+    from datetime import datetime
+
     auth_header = request.headers.get('Authorization')
     if not auth_header or not auth_header.startswith("Bearer "):
         return jsonify({'error': 'Missing or invalid Authorization header'}), 401
@@ -148,7 +179,17 @@ def get_my_audit_access():
             decrypted = decrypt_log_record(entry['encrypted_data'])
             target_user_ids = decrypted.get('target_user_id', '').split(",")
             if patient_id in target_user_ids:
-                matching_records.append(decrypted)
+                raw_ts = entry.get("timestamp", "")
+                formatted_ts = ""
+                try:
+                    formatted_ts = datetime.fromisoformat(raw_ts).strftime("%Y-%m-%d, %H:%M:%S")
+                except Exception:
+                    formatted_ts = raw_ts  # fallback if parsing fails
+
+                matching_records.append({
+                    **decrypted,
+                    "timestamp": formatted_ts
+                })
         except Exception:
             continue  # skip corrupted or tampered entries
 

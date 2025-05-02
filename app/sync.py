@@ -8,9 +8,6 @@ from app.chain import verify_chain
 
 sync_bp = Blueprint('sync', __name__)
 
-# ───────────────────────────────
-# Route: /health
-# ───────────────────────────────
 @sync_bp.route('/health', methods=['GET'])
 def health_check():
     return jsonify({'status': 'ok'})
@@ -23,9 +20,6 @@ def audit_verify():
         'message': message
     })
 
-# ───────────────────────────────
-# Load known peer nodes
-# ───────────────────────────────
 def load_known_nodes():
     try:
         with open('data/nodes.json', 'r') as f:
@@ -34,14 +28,11 @@ def load_known_nodes():
         print(f"⚠️ Failed to load nodes.json: {e}")
         return []
 
-# ───────────────────────────────
-# Ping other nodes once
-# ───────────────────────────────
 def ping_peers():
     nodes = load_known_nodes()
     my_node_id = os.environ.get("NODE_ID", "1")
 
-    print(f"\n🔗 Discovering peers from nodes.json (I am node {my_node_id})...")
+    print(f"\nDiscovering peers from nodes.json (I am node {my_node_id})...")
     for node in nodes:
         if node['node_id'] == my_node_id:
             continue  # Skip self
@@ -55,13 +46,10 @@ def ping_peers():
         except Exception as e:
             print(f"❌ Node {node['node_id']} unreachable at {node['url']}: {e}")
 
-# ───────────────────────────────
-# Start background peer monitor
-# ───────────────────────────────
 def start_peer_monitor(interval=5):
     def monitor():
         while True:
-            print("\n🔁 Periodic peer check:")
+            print("\nPeriodic peer check:")
             ping_peers()
             time.sleep(interval)
 

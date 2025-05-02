@@ -14,7 +14,8 @@ function App() {
 
   const [nodes, setNodes] = useState([
     { name: "Node 1", url: "http://localhost:5001", isAlive: true },
-    { name: "Node 2", url: "http://localhost:5002", isAlive: true }
+    { name: "Node 2", url: "http://localhost:5002", isAlive: true },
+    { name: "Node 3", url: "http://localhost:5003", isAlive: true }
   ]);
 
   const logout = () => {

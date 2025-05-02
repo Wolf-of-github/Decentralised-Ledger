@@ -118,6 +118,8 @@ const AuditorDashboard = ({ selectedNode, token }) => {
                       <strong>Actor User ID:</strong> {record.actor_user_id} <br />
                       <strong>Actor Username:</strong> {record.actor_username} <br />
                       <strong>Target User ID:</strong> {record.target_user_id}
+                      <br />
+                      <strong>Timestamp:</strong> {record.timestamp || 'N/A'}
                     </div>
                   ))
                 ) : !loadingPatient ? (
@@ -156,6 +158,8 @@ const AuditorDashboard = ({ selectedNode, token }) => {
                       <strong>Actor User ID:</strong> {record.actor_user_id} <br />
                       <strong>Actor Username:</strong> {record.actor_username} <br />
                       <strong>Target User ID:</strong> {record.target_user_id}
+                      <br />
+                      <strong>Timestamp:</strong> {record.timestamp || 'N/A'}
                     </div>
                   ))
                 ) : !loadingAuditor ? (

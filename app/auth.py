@@ -6,12 +6,10 @@ from datetime import datetime, timedelta
 
 auth_bp = Blueprint('auth', __name__)
 
-# Load from .env-defined paths
 USERS_FILE = os.environ.get('USERS_FILE', 'data/users.json')
-JWT_SECRET = os.environ.get('JWT_SECRET', 'changeme')
+JWT_SECRET = os.environ.get('JWT_SECRET', 'thisisdefaultjwtsecret')
 JWT_EXPIRATION_SECONDS = int(os.environ.get('JWT_EXPIRATION_SECONDS', 3600))
 
-# Utility: load users from file
 def load_users():
     with open(USERS_FILE, 'r') as f:
         return json.load(f)
@@ -31,7 +29,6 @@ def login():
     if not user or user['password'] != password:
         return jsonify({'error': 'Invalid username or password'}), 401
 
-    # Create JWT payload
     payload = {
         'user_id': user['user_id'],
         'username': username,

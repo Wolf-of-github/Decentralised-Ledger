@@ -1,4 +1,5 @@
 [
     { "node_id": "1", "url": "http://localhost:5001" },
-    { "node_id": "2", "url": "http://localhost:5002" }
-  ]
+    { "node_id": "2", "url": "http://localhost:5002" },
+    { "node_id": "3", "url": "http://localhost:5003" }
+]
