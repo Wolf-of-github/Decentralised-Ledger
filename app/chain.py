@@ -31,11 +31,6 @@ def append_to_chain(log_data_dict):
 
     new_entry = {
         "timestamp": datetime.utcnow().isoformat(),
-        "target_user_id": log_data_dict["target_user_id"],
-        "actor_user_id": log_data_dict["actor_user_id"],
-        "actor_username": log_data_dict["actor_username"],
-        "actor_role": log_data_dict["actor_role"],
-        "action": log_data_dict["action"],
         "encrypted_data": encrypted_data,
         "prev_hash": prev_hash,
     }
