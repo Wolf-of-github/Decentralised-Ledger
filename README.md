@@ -32,15 +32,10 @@ This project addresses the growing need for privacy-preserving, tamper-evident a
 	2.	Launch backend nodes:
 
 set -o allexport; source .env.nodeX; set +o allexport && python run.py
-
-
-	3.	Update React frontend with node info in App.js.
-	4.	Start frontend:
-
+Update React frontend with node info in App.js.
+Start frontend:
 cd client && npm start
-
-
-	5.	Visit: http://localhost:3000
+Visit: http://localhost:3000
 
 🧑‍⚕️ User Roles
 
